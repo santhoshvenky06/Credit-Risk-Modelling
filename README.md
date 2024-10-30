@@ -1,35 +1,32 @@
-# Credit-Risk-Modelling
-
 Credit Risk Modeling Project
-This project is dedicated to developing a robust credit risk model that predicts the Probability of Default (PD) and extends into risk assessment by calculating Loss Given Default (LGD) and Exposure at Default (EAD). These three metrics are crucial in estimating Expected Loss (EL), which informs financial institutions of potential credit risks and helps in strategic decision-making.
+This project develops a robust credit risk model to predict the Probability of Default (PD) and extends into risk assessment by calculating Loss Given Default (LGD) and Exposure at Default (EAD). These metrics are crucial in estimating Expected Loss (EL), helping financial institutions assess potential credit risks and make informed decisions.
 
 Project Overview
 The project leverages machine learning to model and predict credit risk based on historical data, with these main objectives:
 
-Predict Probability of Default (PD): Using logistic regression, decision tree, and random forest models, this project explores how different algorithms perform in predicting the likelihood of default.
-Calculate Loss Given Default (LGD): An industry-average LGD is applied, given the lack of recovery data. For future iterations, having historical recovery rates or loss data by loan grade would enhance this model's accuracy.
-Estimate Exposure at Default (EAD): Assumed as the full loan amount since detailed exposure data over time is unavailable. More granular data, like undrawn credit lines, could refine EAD calculations.
-Expected Loss (EL) Calculation: Combines PD, LGD, and EAD into an EL estimate, providing a comprehensive view of credit risk.
+Predict Probability of Default (PD): Using logistic regression, decision tree, and random forest models to predict the likelihood of default.
+Calculate Loss Given Default (LGD): An industry-average LGD is applied due to a lack of recovery data. Future improvements would benefit from historical recovery rates or loss data by loan grade.
+Estimate Exposure at Default (EAD): EAD is assumed as the full loan amount due to limited exposure data. More granular data, such as undrawn credit lines, could refine EAD.
+Expected Loss (EL) Calculation: Combining PD, LGD, and EAD into an EL estimate provides a comprehensive view of credit risk.
 Methodology
-Data Preprocessing: Data was cleaned to remove extreme outliers, standardized using feature scaling, and categorical variables were encoded.
+Data Preprocessing: Data was cleaned, standardized, and categorical variables were encoded.
 Feature Engineering: Key features included loan amount, interest rate, loan intent, and borrower characteristics (e.g., income, employment length).
 Model Training: Three models (logistic regression, decision tree, and random forest) were used to predict PD, with hyperparameter tuning to optimize each.
-Risk Metrics Calculation: LGD and EAD were estimated and incorporated to compute Expected Loss, extending the model’s practical utility.
+Risk Metrics Calculation: LGD and EAD were estimated and used to compute Expected Loss, enhancing the model’s risk assessment capabilities.
 Key Findings
-Model Performance: Among the models tested, random forests typically performed the best, yielding up to ~85% accuracy in predicting defaults.
-Comprehensive Risk Assessment: By calculating PD, LGD, EAD, and EL, the model offers a holistic view of credit risk, aligning with industry standards.
+Model Performance: Random forests performed the best, yielding up to ~85% accuracy in predicting defaults.
+Comprehensive Risk Assessment: The model calculates PD, LGD, EAD, and EL, aligning with industry-standard risk metrics.
 Shortcomings and Limitations
-Data Limitations:
-Lack of Recovery Data: LGD is a key metric in credit risk, representing the portion of a loan lost after a borrower defaults. This model assumes a static industry-average LGD due to the absence of detailed recovery data, which limits precision. Access to recovery rates or loss data by loan type or grade would improve this calculation.
-Simplistic EAD Calculation: Without detailed exposure data over time or undrawn credit line data, the model assumes EAD is equal to the full loan amount. In reality, some loans might not be fully drawn at default, or revolving credits may have undrawn balances.
-Model Limitations:
-Limited PD Model Inputs: The dataset lacks some relevant borrower financial health indicators (e.g., credit scores, debt-to-income ratio), which could further improve PD model accuracy.
-LGD and EAD Model Assumptions: The use of a static LGD and simplistic EAD could result in a less responsive model to varying loan risk profiles. Ideally, more granular loan and borrower data would allow LGD and EAD to be modeled as functions of borrower and loan characteristics.
-Operational Limitations:
-Scalability: This model is designed for exploratory analysis. In production, the model would require consistent data updates, retraining, and recalibration to stay relevant with changing credit conditions.
+Data Limitations
+Lack of Recovery Data: The model assumes a static industry-average LGD due to missing recovery data, limiting precision. Access to recovery rates by loan type would improve accuracy.
+Simplistic EAD Calculation: Without detailed exposure data or undrawn credit line information, the model assumes EAD equals the full loan amount. In practice, undrawn balances could alter EAD.
+Model Limitations
+Limited PD Model Inputs: The dataset lacks important borrower indicators (e.g., credit scores, debt-to-income ratio) that could improve PD accuracy.
+LGD and EAD Model Assumptions: Using static LGD and EAD values could result in a less responsive model to loan risk variations. More granular loan and borrower data would allow LGD and EAD to be dynamic.
+Operational Limitations
+Scalability: The model is for exploratory analysis. In production, it would need regular updates, retraining, and recalibration.
 Future Enhancements
-Future enhancements could include:
-
-Integrating more borrower-level data (e.g., credit scores, income stability) to refine PD calculations.
-Incorporating historical recovery and undrawn exposure data to dynamically model LGD and EAD.
-Exploring deep learning approaches or ensemble methods to potentially enhance PD model accuracy further.
+Adding more borrower data (e.g., credit scores, income stability) to improve PD predictions.
+Including historical recovery and exposure data to dynamically model LGD and EAD.
+Testing ensemble methods or deep learning approaches to further enhance PD model accuracy.
+This project establishes a foundational framework for credit risk assessment, which can be improved with additional data and modeling techniques. The README details the methodology, limitations, and potential improvements to encourage further development.
